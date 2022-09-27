@@ -1,12 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter ,Routes, Route} from 'react-router-dom';
+import Home from './views/Home';
+import Login from './views/Login';
 import './App.css';
+import Register from './views/Register';
+import Ticket from './views/tickets';
 
 function App() {
   return (
-    <div className="App">
-      <h1>This is the App.js</h1>
-      <p>Blah Blah Blah </p>
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path='/tickets' element={<Ticket.Layout />} >
+                  <Route path="" element={<Ticket.List />}/>
+                  <Route path="create" element={<Ticket.Create />}/>
+              </Route>
+            </Route>
+        </Routes>      
+    </BrowserRouter>
   );
 }
 
