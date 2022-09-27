@@ -27,11 +27,11 @@ export function loginAsync(username,password){
 
 }
 
-export function register(username,password){
+export function register(username,password,firstName, lastName,address,phone){
     let config = {
         method:'POST',
         headers: {'Content-Type':'application/json'},
-        body:  JSON.stringify({username,password})
+        body:  JSON.stringify({username,password,firstName,lastName,address, phone})
     }
     return fetch(`${server}/account/register`,config);       
 }
