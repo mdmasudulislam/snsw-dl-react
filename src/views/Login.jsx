@@ -4,14 +4,16 @@ import { loginAsync } from "../web-services";
 
 export default function Login(){
 
-    const [userName,setUserName] = useState('')
+    const [username,setUserName] = useState('')
     const [password,setPassword] = useState('')
     const navigate = useNavigate(); 
     const [token,setToken] = useOutletContext();
 
+debugger;
+
     function login(){
      
-        loginAsync(userName,password)
+        loginAsync(username,password)
             .then(j => {
                 setToken(j); 
                 navigate("/")
@@ -24,7 +26,7 @@ export default function Login(){
             <h2>Sign In</h2>
             <div>
                 <label>Username: </label>
-                <input type="text" value={userName} onChange={e=>setUserName(e.target.value)}/>
+                <input type="text" value={username} onChange={e=>setUserName(e.target.value)}/>
             </div>
             <div>
                 <label>Password: </label>

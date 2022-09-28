@@ -13,10 +13,13 @@ export default function Register(){
 
     const navigate = useNavigate(); 
 
+debugger
+
     function submit(){
         register(username,password, firstName, lastName, address, phone)
             .then(r=> {
-                alert("User Registered"); 
+                // alert("User Registered"); 
+                alert(`User ${username} has been successfully Registered`)
                 navigate("/login")
             })
             .catch(e => alert(e.message)); 
