@@ -1,10 +1,5 @@
-import { BrowserRouter ,Routes, Route} from 'react-router-dom';
-import Home from './views/Home';
-import Login from './views/Login';
-import './App.css';
-import Register from './views/Register';
-import Ticket from './views/tickets';
 
+<<<<<<< HEAD
 function App() {
   return (
     <BrowserRouter>
@@ -23,3 +18,5 @@ function App() {
 }
 
 export default App;
+=======
+>>>>>>> cdb00fc82b58f25b8fc3702396632a901c12fb10
