@@ -13,6 +13,7 @@ export function loginAsync(username,password){
     }
 
     return fetch(`${server}/account/login`,config)
+
             .then(r => {
           
                 if(r.status != 200){
@@ -22,6 +23,7 @@ export function loginAsync(username,password){
             })
             .then(j => {
                 localStorage.setItem('token',j)
+                
                 return j; 
             })
 

@@ -1,10 +1,20 @@
 
 import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { parseJwt } from "../web-services";
 
 export default function UserInfo(){
     const [token, setToken] = useState();
+
+    // useNavigate
+    const navigate = useNavigate()
+
+    // Function for logout
+
+    function logout(){
+        localStorage.removeItem("token");
+        navigate("/")
+    }
 
     useEffect(()=>{
         let t = localStorage.getItem("token");
@@ -24,6 +34,7 @@ export default function UserInfo(){
     return (
         <div>
             <p>Logged in as {payload.username}</p>
+            <button onClick={logout}>Logout</button>
         </div>
     );
 }
