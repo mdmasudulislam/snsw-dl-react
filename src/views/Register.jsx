@@ -30,7 +30,7 @@ debugger
             <h2>Register Today</h2>
             <div>
                 <label>Username</label>
-                <input type="text" value={username} onChange={e=>setUsername(e.target.value)} />
+                <input type="email" value={username} onChange={e=>setUsername(e.target.value)} />
                 <label>Must be a valid email address</label>
             </div>
             <div>

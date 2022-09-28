@@ -8,9 +8,7 @@ export default function Login(){
     const [password,setPassword] = useState('')
     const navigate = useNavigate(); 
     const [token,setToken] = useOutletContext();
-
-debugger;
-
+    
     function login(){
      
         loginAsync(username,password)
@@ -18,7 +16,8 @@ debugger;
                 setToken(j); 
                 navigate("/")
             })
-            .catch(e => alert(e.message))
+            // .catch(e => alert(e.message))
+            .catch(e => alert(e.message = "Invalid username or password"))
     }
 
     return(

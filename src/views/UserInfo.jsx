@@ -7,7 +7,7 @@ export default function UserInfo(){
     const [token, setToken] = useState();
 
     // useNavigate
-    const navigate = useNavigate()
+    const navigate =useNavigate()
 
     // Function for logout
 
@@ -33,8 +33,14 @@ export default function UserInfo(){
     let payload = parseJwt(token); 
     return (
         <div>
-            <p>Logged in as {payload.username}</p>
-            <button onClick={logout}>Logout</button>
+            <h2>Logged in as {payload.username}</h2>
+            <p>First Name:  {payload.firstName}</p>
+            <p>Last Name: {payload.lastName}</p>
+            <p>Address: {payload.address}</p>
+            <p>Phone Number: {payload.phone}</p>
+            {/* <button onClick={logout}>Logout</button> */}
+            <Link onClick={logout}>Edit | </Link>
+            <Link onClick={logout}>Logout</Link>
         </div>
     );
 }

@@ -3,35 +3,36 @@ import {useParams,useOutletContext,Link} from 'react-router-dom'
 export default function UserProfile(){
 
     //outlet context
-    const [tasks,setTasks] = useOutletContext(); 
+    const [users,setUsers] = useOutletContext(); 
     //params
     const params = useParams(); 
-    let task = tasks.find(t=>t._id == params.id); 
+    // let user = users.find(t=>t._id == params.id); 
+    let user = users.find(u=>u.username == params.username);
     //JSX
-    if(task == undefined){      
+    if(user == undefined){      
         return (<div>Not Found</div>);      
     }
     else{
         
         return(
             <div className="Div-border">
-                <h1>Task Details : {task?._id}</h1>
+                <h1>User Details : {user?._id}</h1>
                     <div>
-                    <label>Assignee Name: {task?.assignee}</label>
+                    <label>Assignee Name: {user?.username}</label>
                     </div>                    
                     <div>
-                    <label>Department: {task?.department}</label>
+                    <label>Department: {user?.firstName}</label>
                     </div>
                     <div>
-                    <label>Priority: {task?.priority}</label>
+                    <label>Priority: {user?.lastName}</label>
                     </div>
                     <div>
-                    <label>Due Date: {task?.dueDate}</label>
+                    <label>Due Date: {user?.address}</label>
                     </div>
                     <div>
-                    <label>Description: {task?.description}</label>
+                    <label>Description: {user?.phone}</label>
                     </div>                
-                    <Link to={"/tasks"}>Go Back</Link>
+                    <Link to={"/"}>Go Back</Link>
                 </div>
         );
 
