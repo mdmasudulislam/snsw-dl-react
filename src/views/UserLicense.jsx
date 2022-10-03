@@ -3,7 +3,7 @@ import {useParams,useOutletContext,Link} from 'react-router-dom'
 // import { fetchAllUsers } from '../web-services'
 
 
-export default function UserProfile(){
+export default function UserLicense(){
 
     const [user,setUser] = useState(); 
     //params
@@ -36,26 +36,32 @@ export default function UserProfile(){
         return(
             <div className="Div-border">
                 <div>
-                <h2>Customer Profile</h2>
-                </div>                
+                <h2>License Details</h2>
+                </div>
                 <div>
                 <label>Customer ID: {user?._id}</label>
                 </div>
                 <div>
                 <label>First Name: {user?.firstName}</label>
-                </div>
+                </div>                
                 <div>
                 <label>Last Name: {user?.lastName}</label>
-                </div>                  
-                <div>
-                <label>Address: {user?.address}</label>
                 </div>
                 <div>
-                <label>Phone: {user?.phone}</label>
-                </div>               
+                <label>License Number: {user?.licenseNo}</label>
+                </div>
+                <div>
+                <label>License Type: {user?.licenseType}</label>
+                </div>
+                <div>
+                <label>Issue Date: {user?.licenseIssueDate}</label>
+                </div>
+                <div>
+                <label>Expiry Date: {user?.licenseExpiryDate}</label>
+                </div>
                     {/* <Link to={"/"}>Go Back</Link> */}
-                <Link to={"/user/edit/$username"}>Edit Profile</Link> |
-                <Link to={"/user/license/$username"}> View License</Link>
+                {/* <Link to={"/user/edit/$username"}>Edit Profile</Link> | */}
+                <Link to={"/user/$username"}> Back To Profile</Link>
             </div>
         );
 

@@ -53,14 +53,14 @@ export function submitTicket(category){
 
 }
 
-export function fetchAllTickets(){
+export function fetchAllUsers(){
     let config = {
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token')
         }
     }; 
 
-    return fetch(`${server}/tickets`,config); 
+    return fetch(`${server}/account/search`,config); 
 
 }
 

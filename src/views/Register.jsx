@@ -13,8 +13,6 @@ export default function Register(){
 
     const navigate = useNavigate(); 
 
-debugger
-
     function submit(){
         register(username,password, firstName, lastName, address, phone)
             .then(r=> {
@@ -26,34 +24,36 @@ debugger
     }
 
     return (
-        <div>
+        <div className="Div-border">
             <h2>Register Today</h2>
             <div>
-                <label>Username</label>
+                <label>Username (Must be a valid email address)</label>
+                <br/>
                 <input type="email" value={username} onChange={e=>setUsername(e.target.value)} />
-                <label>Must be a valid email address</label>
             </div>
             <div>
                 <label>Password</label>
+                <br/>
                 <input type="password" value={password} onChange={e=>setPassword(e.target.value)} />
             </div>
             <div>
-                <label>First Name</label>
+                <label>Enter First Name</label>
+                <br/>
                 <input type="text" value={firstName} onChange={e=>setFirstName(e.target.value)} />
             </div>
-
             <div>
                 <label>Last Name</label>
+                <br/>
                 <input type="text" value={lastName} onChange={e=>setLastName(e.target.value)} />
             </div>
-
             <div>
                 <label>Address</label>
+                <br/>
                 <input type="text" value={address} onChange={e=>setAddress(e.target.value)} />
             </div>
-
             <div>
                 <label>Phone</label>
+                <br/>
                 <input type="number" value={phone} onChange={e=>setPhone(e.target.value)} />
             </div>
 
